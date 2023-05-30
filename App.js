@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { PaperProvider, Card, Text } from 'react-native-paper';
 import { Alert, View, Image, StyleSheet, TouchableOpacity, Avatar, Button } from 'react-native';
 import CountDown from 'react-native-countdown-component';
-import img from './assests/imgs/imm.jpg';
-import img1 from './assests/imgs/img1.png';
-import img2 from './assests/imgs/img2.jpg';
 import Swiper from 'react-native-swiper';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import CircularProgress from 'react-native-circular-progress-indicator';
@@ -12,7 +9,7 @@ import CircularProgress from 'react-native-circular-progress-indicator';
 
 
 function App() {
-const [value,setValue]=useState(0);
+  const [value, setValue] = useState(0);
   const img = [
     { uri: require('./assests/imgs/imm.jpg'), key: '1' },
     { uri: require('./assests/imgs/img1.png'), key: '2' },
@@ -23,9 +20,8 @@ const [value,setValue]=useState(0);
   return (
     <PaperProvider>
       <View style={styles.container}>
-        <Card style={styles.card}>
+        <Card style={styles.cardstyle}>
           <View>
-            
             <Swiper loop={false}>
               {img.map((image, index) => (
                 <View style={styles.slide} key={image.key}>
@@ -63,19 +59,19 @@ const [value,setValue]=useState(0);
             </Swiper>
             <View style={styles.circluarProgressContainer}>
               <View style={styles.circularProgress}>
-              <CircularProgress
-                radius={30}
-                value={29}
-                textColor='#222'
-                fontSize={20}
-                valueSuffix={'%'}
-                inActiveStrokeColor={'#2ecc71'}
-                inActiveStrokeOpacity={0.4}
-                inActiveStrokeWidth={6}
-                duration={4000}
-                onAnimationComplete={()=>setValue(50)}
-              />
-            </View>
+                <CircularProgress
+                  radius={30}
+                  value={29}
+                  textColor='#222'
+                  fontSize={20}
+                  valueSuffix={'%'}
+                  inActiveStrokeColor={'#2ecc71'}
+                  inActiveStrokeOpacity={0.4}
+                  inActiveStrokeWidth={6}
+                  duration={4000}
+                  onAnimationComplete={() => setValue(50)}
+                />
+              </View>
               <View style={styles.amountContainer}>
                 <Text style={styles.amount}>£5,000,000 GBD</Text>
               </View>
@@ -118,7 +114,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
-  card: {
+  cardstyle: {
     alignItems: 'center',
     margin: 10,
     height: '45%',
@@ -131,11 +127,6 @@ const styles = StyleSheet.create({
     height: '100%',
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
-  },
- 
-  timercolumncontainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   iconContainer: {
     position: 'absolute',
@@ -169,16 +160,16 @@ const styles = StyleSheet.create({
   },
   sothebysContainer: {
     left: '40%',
-    alignItems:"flex-end",
+    alignItems: "flex-end",
   },
   sothebysText: {
-    marginTop:"12%",
+    marginTop: "12%",
     fontSize: 18,
     color: '#fff',
   },
-  interText : {
-    
-        color: '#fff',
+  interText: {
+
+    color: '#fff',
     fontSize: 9,
   },
   locationCon: {
